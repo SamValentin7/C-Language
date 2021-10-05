@@ -4,22 +4,27 @@ using namespace std;
 
 int main()
 {
-    //exemplu 1
-    //Să se elaboreze algoritmul care calculează suma S=1+1*2+1*2*3+…+1*2* …*n.
-    unsigned int n, i, j, s, p;
-
-    cout<<"Introdu n= ";
-    cin>>n;
+    //exemplu 3
+    /* Se citesc numere naturale până la întâlnireanumărului 0.
+    Să se afișeze toate perechile denumere citite consecutiv,
+    cu proprietatea că al doilea număr reprezintă restul împărțirii primului număr la suma cifrelor sale.*/
+   unsigned int n, m, s, k;
+   cout<<"Introduceti numerele naturale pana la 0"<<endl;
+   cin>>n;
+   while (n!=0){
+    cin>>m;
+    k = n;
     s=0;
-    for (i=1; i<=n; i++){
-        p=1;
-        for(j=1; j<=i;j++)
-            p *= j;
-        s += p;
+    while (k!=0){
+        s += k % 10;
+        k /= 10;
     }
-    cout<<"Suma = "<<s<<endl;
+    if (n % s ==m)
+    cout<<"Perechea:"<<n<<" "<<m;
+    n = m;
+   }
 
 
 
-    return 0;
+   return 0;
 }

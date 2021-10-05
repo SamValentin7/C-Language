@@ -1,30 +1,26 @@
 #include <iostream>
-#include <stdio.h>
+
 using namespace std;
 
 int main()
 {
-    //exemplu 3
-    /* Se citesc numere naturale până la întâlnireanumărului 0.
-    Să se afișeze toate perechile denumere citite consecutiv,
-    cu proprietatea că al doilea număr reprezintă restul împărțirii primului număr la suma cifrelor sale.*/
-   unsigned int n, m, s, k;
-   cout<<"Introduceti numerele naturale pana la 0"<<endl;
-   cin>>n;
-   while (n!=0){
-    cin>>m;
-    k = n;
-    s=0;
-    while (k!=0){
-        s += k % 10;
-        k /= 10;
+    //exemplu 4
+
+    unsigned long long n;
+    int s;
+    cout<<"Introduceti numarul natural: ";
+    cin>>n;
+    while (n > 10){
+        s = 0;
+        while (n > 10){
+            s += n % 10;
+            n /= 10;
+        }
+        if (s / 10 ==0)
+            cout<<"Suma calculata = "<<s;
+        else
+            n = s;
     }
-    if (n % s ==m)
-    cout<<"Perechea:"<<n<<" "<<m;
-    n = m;
-   }
 
-
-
-   return 0;
+    return 0;
 }
